@@ -35,8 +35,8 @@ const upload = multer({
 
 app.post("/convert", upload.single("postmedia"), (req, res) => {
 	const input = req.file;
-	const outputpath = ".\\" + input.path + "" + ".png";
-	gm(".\\" + input.path).write(outputpath, function (err) {
+	const outputpath = "./" + input.path + "" + ".png";
+	gm("./" + input.path).write(outputpath, function (err) {
 		if (err) console.log(err);
 		else {
 			console.log("done");
